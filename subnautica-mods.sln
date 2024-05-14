@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EE0F3EB3-44D3-48A2-86EA-90AE844C61D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BulkCraft", "src\BulkCraft\BulkCraft.csproj", "{0D72C791-1C8B-4243-A4CE-17771C0A68BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkAsRead", "src\MarkAsRead\MarkAsRead.csproj", "{9776FD00-833A-4B58-BCBA-8D84A218B44C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D72C791-1C8B-4243-A4CE-17771C0A68BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D72C791-1C8B-4243-A4CE-17771C0A68BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D72C791-1C8B-4243-A4CE-17771C0A68BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D72C791-1C8B-4243-A4CE-17771C0A68BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9776FD00-833A-4B58-BCBA-8D84A218B44C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9776FD00-833A-4B58-BCBA-8D84A218B44C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9776FD00-833A-4B58-BCBA-8D84A218B44C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9776FD00-833A-4B58-BCBA-8D84A218B44C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0D72C791-1C8B-4243-A4CE-17771C0A68BD} = {EE0F3EB3-44D3-48A2-86EA-90AE844C61D0}
+		{9776FD00-833A-4B58-BCBA-8D84A218B44C} = {EE0F3EB3-44D3-48A2-86EA-90AE844C61D0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56C4E842-C37D-4104-88A7-C04D83C4B6CA}
+	EndGlobalSection
+EndGlobal
