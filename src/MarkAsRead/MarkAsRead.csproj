@@ -2,19 +2,28 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
-		<AssemblyName>MarkAsRead</AssemblyName>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<LangVersion>11</LangVersion>
 		<RootNamespace>MarkAsRead</RootNamespace>
 
+		<AssemblyName>MarkAsRead</AssemblyName>
 		<Version>1.0.0</Version>
 		<BepInExPluginName>MarkAsRead</BepInExPluginName>
 		<BepInExPluginGUID>me.bbalvanera.markasread</BepInExPluginGUID>
+		<Copyright>© 2024 Bernardo Balvanera</Copyright>
 
 		<RestoreAdditionalProjectSources>
 			https://api.nuget.org/v3/index.json;
 			https://nuget.bepinex.dev/v3/index.json;
 		</RestoreAdditionalProjectSources>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DebugType>none</DebugType>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -31,14 +40,13 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
-		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2"
-			PrivateAssets="all" />
+		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
 	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<PropertyGroup>
 			<Destination>$(OneDrive)\Documents\SubnauticaMods\$(AssemblyName)</Destination>
 		</PropertyGroup>
-		<Exec Command="xcopy $(Outdir) $(Destination) /I /Y" />
+		<Exec Command="xcopy $(Outdir)\*.dll $(Destination) /I /Y" />
 	</Target>
 </Project>
