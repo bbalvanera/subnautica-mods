@@ -19,8 +19,6 @@ internal static class ToolTipHandler
             return;
 
         var hintType = GetActionHint();
-        Plugin.Logger.LogDebug($"ActionHint: {hintType}");
-        
         var text = GetActionText(hintType);
 
         tooltip.AppendLine(text);
@@ -31,15 +29,13 @@ internal static class ToolTipHandler
         var craftAmount = CraftAmountHandler.main.CraftAmount;
         var maxCraftAmount = CraftAmountHandler.main.MaxCraftAmount;
 
-        Plugin.Logger.LogDebug($"CraftAmount: {craftAmount}, MaxCraftAmount: {maxCraftAmount}");
-
         if (maxCraftAmount <= 1)
             return ActionHint.None;
         if (craftAmount == 1)
             return ActionHint.Increase;
         if (craftAmount == maxCraftAmount)
             return ActionHint.Decrease;
-        
+
         return ActionHint.Both;
     }
 

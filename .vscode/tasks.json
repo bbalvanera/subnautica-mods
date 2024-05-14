@@ -6,10 +6,16 @@
       "task": "build",
       "group": {
         "kind": "build",
-        "isDefault": true
+        "isDefault": true,
+        "args": ["configuration", "Release"]
       },
       "problemMatcher": [],
       "label": "dotnet: build"
+    },
+    {
+      "label": "dotnet: build -release",
+      "type": "shell",
+      "command": "dotnet build -c Release"
     }
   ]
 }
