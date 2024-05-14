@@ -1,7 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
+using BulkCraft.Helpers;
 using HarmonyLib;
-using Nautilus.Handlers;
 using System.Reflection;
 using UnityEngine;
 
@@ -21,9 +21,9 @@ public class Plugin : BaseUnityPlugin
     {
         Logger = base.Logger;
 
-        SetMessages();
-
+        LanguageHelper.Init();
         Harmony.CreateAndPatchAll(Assembly, $"{PluginInfo.PLUGIN_GUID}");
+
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
     }
 
@@ -38,20 +38,5 @@ public class Plugin : BaseUnityPlugin
         }
 
         return false;
-    }
-
-    private void SetMessages()
-    {
-        // English
-        LanguageHandler.SetLanguageLine("NotEnoughPower", "Not enough power to craft the selected amount!", "English");
-        LanguageHandler.SetLanguageLine("ChangeItemAmount", "change quantity", "English");
-
-        // Spanish
-        LanguageHandler.SetLanguageLine("NotEnoughPower", "No hay suficiente energía para tanta cantidad!", "Spanish");
-        LanguageHandler.SetLanguageLine("ChangeItemAmount", "cambiar cantidad", "Spanish");
-
-        // Spanish (Latin America)
-        LanguageHandler.SetLanguageLine("NotEnoughPower", "No hay suficiente energía para tanta cantidad!", "Spanish (Latin America)");
-        LanguageHandler.SetLanguageLine("ChangeItemAmount", "cambiar cantidad", "Spanish (Latin America)");
     }
 }

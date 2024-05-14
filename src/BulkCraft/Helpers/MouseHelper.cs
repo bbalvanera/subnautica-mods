@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace BulkCraft.Helpers;
 
-internal static class Mouse
+internal static class MouseHelper
 {
     public enum ScrollDir
     {

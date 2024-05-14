@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BulkCraft.Handlers;
 
-using ScrollDir = Mouse.ScrollDir;
+using ScrollDir = MouseHelper.ScrollDir;
 
 internal sealed class CraftAmountHandler
 {
@@ -96,7 +96,7 @@ internal sealed class CraftAmountHandler
 
     private void UpdateAmount()
     {
-        var dir = Mouse.GetScrollDir();
+        var dir = MouseHelper.GetScrollDir();
         if (!CanUpdateAmount(dir))
             return;
 

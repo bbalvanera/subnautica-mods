@@ -1,13 +1,14 @@
-﻿using System.Reflection;
-using BepInEx;
+﻿using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using MarkAsRead.Helpers;
 using Nautilus.Handlers;
+using System.Reflection;
 
 namespace MarkAsRead;
 
 [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-[BepInDependency("com.snmodding.nautilus")]
+[BepInDependency(Nautilus.PluginInfo.PLUGIN_GUID, BepInDependency.DependencyFlags.SoftDependency)]
 public class Plugin : BaseUnityPlugin
 {
     public new static ManualLogSource Logger { get; private set; }
@@ -18,18 +19,9 @@ public class Plugin : BaseUnityPlugin
     {
         Logger = base.Logger;
 
-        SetMessages();
-
+        LanguageHelper.Init();
         Harmony.CreateAndPatchAll(ExecutingAssembly, $"{PluginInfo.PLUGIN_GUID}");
+
         Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
-    }
-
-    private void SetMessages()
-    {
-        LanguageHandler.SetLanguageLine("ClearNotifications", "mark as read", "English");
-        LanguageHandler.SetLanguageLine("ClearNotifications", "marcar como leído", "Spanish (Latin America)");
-        LanguageHandler.SetLanguageLine("ClearNotifications", "marcar como leído", "Spanish");
-
-        Plugin.Logger.LogDebug($"Current Language is: {Language.main.currentLanguage}");
     }
 }
