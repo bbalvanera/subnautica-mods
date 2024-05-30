@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using HarmonyLib;
+﻿using HarmonyLib;
+using System.Linq;
 using TabGroup = NotificationManager.Group;
 
 namespace MarkAsRead.Patches;
@@ -37,7 +37,7 @@ public class PDAPatch
             data.prefix
                 .Append($"\n<size=20> </size>")
                 .Append($"<color=#ADF8FFFF>{char.ConvertFromUtf32(57404)}</color>")
-                .Append($" - <color=#00FFFFFF>{Language.main.Get("ClearNotifications")}</color>");
+                .Append($" - <color=#00FFFFFF>{Language.main.Get("MarkAsRead")}</color>");
         }
     }
 
