@@ -3,7 +3,6 @@ using BulkCraft.Shared;
 using Nautilus.Crafting;
 using Nautilus.Handlers;
 using System.Linq;
-using System.Text;
 
 namespace BulkCraft.Handlers;
 
@@ -102,7 +101,7 @@ internal sealed class CraftAmountHandler
 
         craftAmount += dir == ScrollDir.Up ? 1 : -1;
         var newIngredients = originalRecipe.Ingredients
-          .Select(ing => new CraftData.Ingredient(ing.techType, ing.amount * craftAmount))
+          .Select(ing => new Ingredient(ing.techType, ing.amount * craftAmount))
           .ToList();
 
         currentRecipe.craftAmount = originalRecipe.craftAmount * craftAmount;
@@ -129,7 +128,7 @@ internal sealed class CraftAmountHandler
 
     private float GetCurrentEnergyCost()
     {
-        var exists = CraftData.GetEnergyCost(currentTechType, out var retVal);
+        var exists = TechData.GetEnergyCost(currentTechType, out var retVal);
         return exists ? retVal : 1f; // 1f por mis huevos
     }
 }

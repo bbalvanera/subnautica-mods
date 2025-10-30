@@ -6,7 +6,7 @@ namespace BulkCraft.Patches;
 [HarmonyPatch(typeof(Crafter))]
 internal class CrafterPatch
 {
-    [HarmonyPrefix, HarmonyPatch(nameof(Crafter.Craft))]
+    [HarmonyPrefix, HarmonyPatch(nameof(GhostCrafter.Craft))]
     public static void CraftPrefix(TechType techType, ref float duration)
     {
         if (CraftAmountHandler.main.IsHandlingTechType(techType))

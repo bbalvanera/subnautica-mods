@@ -43,12 +43,12 @@ internal static class ToolTipHandler
     {
         return hintType switch
         {
-            ActionHint.Increase => GetText(MouseHelper.ScrollUpIcon),
-            ActionHint.Decrease => GetText(MouseHelper.ScrollDownIcon),
-            ActionHint.Both => GetText($"{MouseHelper.ScrollUpIcon}/{MouseHelper.ScrollDownIcon}"),
+            ActionHint.Increase => GetToolTip(MouseHelper.ScrollUpIcon),
+            ActionHint.Decrease => GetToolTip(MouseHelper.ScrollDownIcon),
+            ActionHint.Both => GetToolTip($"{MouseHelper.ScrollUpIcon}/{MouseHelper.ScrollDownIcon}"),
             _ => string.Empty
         };
     }
 
-    private static string GetText(string key) => $"\n<size=20><color=#ffffffff><color=#ADF8FFFF>{key}</color></color> - <color=#00ffffff>{Language.main.Get("ChangeItemAmount")}</color></size>";
+    private static string GetToolTip(string hint) => $"\n<size=20>{hint} - <color=#00ffffff>{Language.main.Get("ChangeItemAmount")}</color></size>";
 }

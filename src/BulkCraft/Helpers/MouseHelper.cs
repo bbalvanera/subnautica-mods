@@ -12,8 +12,8 @@ internal static class MouseHelper
         Down,
     }
 
-    public static string ScrollUpIcon => ToText(57406);
-    public static string ScrollDownIcon => ToText(57407);
+    public static string ScrollUpIcon => "<sprite name=\"MouseWheelUp\" color=#ADF8FFFF>";
+    public static string ScrollDownIcon => "<sprite name=\"MouseWheelDown\" color=#ADF8FFFF>";
 
     public static ScrollDir GetScrollDir()
     {
@@ -26,6 +26,4 @@ internal static class MouseHelper
             _ => throw new NotImplementedException(),
         };
     }
-
-    private static string ToText(int utf32) => char.ConvertFromUtf32(utf32);
 }

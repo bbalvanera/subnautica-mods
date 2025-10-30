@@ -36,7 +36,7 @@ public class PDAPatch
         {
             data.prefix
                 .Append($"\n<size=20> </size>")
-                .Append($"<color=#ADF8FFFF>{char.ConvertFromUtf32(57404)}</color>")
+                .Append($"<sprite name=\"MouseButtonRight\" color=#ADF8FFFF>")
                 .Append($" - <color=#00FFFFFF>{Language.main.Get("MarkAsRead")}</color>");
         }
     }
